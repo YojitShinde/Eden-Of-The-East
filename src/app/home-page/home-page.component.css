@@ -1,0 +1,65 @@
+.container {
+    text-align: center; 
+    margin-top: 2rem;
+}
+img {
+    max-width: 15rem;
+}
+mat-toolbar {
+    background-color: #ff3131; 
+    color: white; 
+    height: 2rem;
+}
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+  
+.example-full-width {
+    width: 100%;
+}
+.search-field {
+    text-align: center;
+    margin-top: 5rem; 
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #ff3131!important;
+}
+mat-label {
+    color: #ff3131;
+}
+button {
+    background-color: black;
+    color: white;
+}
+.search-results {
+    margin-left: 3rem;
+    margin-top: 5rem; 
+    padding-bottom: 3rem;
+}
+.result{
+    margin-bottom: 1rem;
+}
+.footer {
+    text-align: center;
+    color: #ff3131;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+:host.pc .container {
+    margin-top: 3rem;
+}
+:host.pc img {
+    max-width: 50rem;
+}
+:host.pc mat-toolbar {
+    height: 3rem;
+}
+:host.pc .search-field {
+    margin-top: 7rem; 
+}
+:host.pc mat-form-field {
+    width: 30rem;
+}

@@ -1,0 +1,24 @@
+<p>
+  <mat-toolbar></mat-toolbar>
+</p>
+<div class="container">
+  <img src="assets/eden_of_the_east_icon.jpg">
+</div>
+<div class="search-field">
+    <form>
+      <mat-form-field appearance="outline">
+        <mat-label>Query</mat-label>
+        <input matInput name="query" [(ngModel)] = "query">
+      </mat-form-field><br>
+      <button type="submit" mat-stroked-button (click)="onSearchClick()">Search</button>
+    </form>
+</div>
+<div class="search-results">
+    <div class="result" *ngFor="let result of results">
+        <b>{{result.title}}</b><br>
+        <a href="{{result.url}}">{{result.url}}</a>
+    </div>
+</div>
+<div class="footer">
+    Made by Yojit Shinde
+</div>
