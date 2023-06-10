@@ -32,6 +32,7 @@ mat-label {
 button {
     background-color: black;
     color: white;
+    margin-right: 1.3rem;
 }
 .search-results {
     margin-left: 3rem;

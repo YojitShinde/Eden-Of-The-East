@@ -10,7 +10,10 @@ import { WebSearchService } from '../web-search.service';
 })
 export class HomePageComponent implements OnInit {
   
-  results:any = []
+  web_results:any = []
+  img_results:any = []
+  web: boolean = true;
+  img: boolean = true;
 
   @HostBinding('class.pc') pcMode = false;
 
@@ -43,21 +46,37 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSearchClick(){
+  onWebSearchClick(){
+    this.web = false;
+    this.img = true;
     console.log(this.query);
     this.webSearchService.basicSearch(this.query).subscribe(res=>{
-      this.results[0] = res.value[0];
-      this.results[1] = res.value[1];
-      this.results[2] = res.value[2];
-      this.results[3] = res.value[3];
-      this.results[4] = res.value[4];
-      this.results[5] = res.value[5];
-      this.results[6] = res.value[6];
-      this.results[7] = res.value[7];
-      this.results[8] = res.value[8];
-      this.results[9] = res.value[9];
+      this.web_results[0] = res.value[0];
+      this.web_results[1] = res.value[1];
+      this.web_results[2] = res.value[2];
+      this.web_results[3] = res.value[3];
+      this.web_results[4] = res.value[4];
+      this.web_results[5] = res.value[5];
+      this.web_results[6] = res.value[6];
+      this.web_results[7] = res.value[7];
+      this.web_results[8] = res.value[8];
+      this.web_results[9] = res.value[9];
     })
 	}
+
+  onImgSearchClick(){
+    this.web = true;
+    this.img = false;
+    console.log(this.query);
+    this.webSearchService.imageSearch(this.query).subscribe(res=>{
+      console.log(res);
+      this.img_results[0] = res.value[0];
+      this.img_results[1] = res.value[1];
+      this.img_results[2] = res.value[2];
+      this.img_results[3] = res.value[3];
+      this.img_results[4] = res.value[4];
+    })
+  }
   
 }
 

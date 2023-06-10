@@ -24,4 +24,21 @@ export class WebSearchService {
 				headers: headers
 			})
   }
+
+  imageSearch(val:any){
+    let headers = new HttpHeaders({
+			'x-rapidapi-host': 'contextualwebsearch-websearch-v1.p.rapidapi.com',
+			'x-rapidapi-key': '161093014amsh6516ff8df6a5904p14c013jsnb056e3345b2d'
+		});
+		return this.httpClient
+			.get<any>('https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI', {
+        params: {
+          q: val,
+          pageNumber: '1',
+          pageSize: '5',
+          autoCorrect: 'true'
+        },
+				headers: headers
+			})
+  }
 }
