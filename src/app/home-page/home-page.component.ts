@@ -51,32 +51,33 @@ export class HomePageComponent implements OnInit {
     this.img = true;
     console.log(this.query);
     this.webSearchService.basicSearch(this.query).subscribe(res=>{
-      this.web_results[0] = res.value[0];
-      this.web_results[1] = res.value[1];
-      this.web_results[2] = res.value[2];
-      this.web_results[3] = res.value[3];
-      this.web_results[4] = res.value[4];
-      this.web_results[5] = res.value[5];
-      this.web_results[6] = res.value[6];
-      this.web_results[7] = res.value[7];
-      this.web_results[8] = res.value[8];
-      this.web_results[9] = res.value[9];
+      console.log(res)
+      this.web_results[0] = res.results[0];
+      this.web_results[1] = res.results[1];
+      this.web_results[2] = res.results[2];
+      this.web_results[3] = res.results[3];
+      this.web_results[4] = res.results[4];
+      this.web_results[5] = res.results[5];
+      this.web_results[6] = res.results[6];
+      this.web_results[7] = res.results[7];
+      this.web_results[8] = res.results[8];
+      this.web_results[9] = res.results[9];
     })
 	}
 
-  onImgSearchClick(){
-    this.web = true;
-    this.img = false;
-    console.log(this.query);
-    this.webSearchService.imageSearch(this.query).subscribe(res=>{
-      console.log(res);
-      this.img_results[0] = res.value[0];
-      this.img_results[1] = res.value[1];
-      this.img_results[2] = res.value[2];
-      this.img_results[3] = res.value[3];
-      this.img_results[4] = res.value[4];
-    })
-  }
+  // onImgSearchClick(){
+  //   this.web = true;
+  //   this.img = false;
+  //   console.log(this.query);
+  //   this.webSearchService.imageSearch(this.query).subscribe(res=>{
+  //     console.log(res);
+  //     this.img_results[0] = res.value[0];
+  //     this.img_results[1] = res.value[1];
+  //     this.img_results[2] = res.value[2];
+  //     this.img_results[3] = res.value[3];
+  //     this.img_results[4] = res.value[4];
+  //   })
+  // }
   
 }
 

@@ -1,5 +1,5 @@
 <p>
-  <mat-toolbar></mat-toolbar>
+  <mat-toolbar><marquee>'Eden-Of-The-East' is an Oper-Source Project developed by Yojit Shinde | It is a Search Engine built with AngularJS and Web-Search API</marquee></mat-toolbar>
 </p>
 <div class="container">
   <img src="assets/eden_of_the_east_icon.jpg">
@@ -10,21 +10,24 @@
         <mat-label>Query</mat-label>
         <input matInput name="query" [(ngModel)] = "query">
       </mat-form-field><br>
-      <button type="submit" mat-stroked-button (click)="onWebSearchClick()">Web Search</button>
-      <button type="submit" mat-stroked-button (click)="onImgSearchClick()">Image Search</button>
+      <button type="submit" mat-stroked-button (click)="onWebSearchClick()">Search</button><br><br><br><br>
+      <!-- <button type="submit" mat-stroked-button (click)="onImgSearchClick()">Image Search</button> -->
+      <p style="font-size: 1.2rem;">Welcome to Eden-Of-The-East.</p>
+      <p style="font-size: 1.0rem;">Enter the the search query and click the search button to use the web-application.</p>
+      <p>For Contribution, <a href="https://github.com/YojitShinde/Eden-Of-The-East">Click Here!</a></p>
     </form>
 </div>
-<div class="web-search-results" [hidden]="web">
-    <div class="result" *ngFor="let result of web_results">
-        <b>{{result.title}}</b><br>
-        <a href="{{result.url}}">{{result.url}}</a>
+<div style="margin-left: 5rem;">
+  <!-- <p>Welcome to Eden-Of-The-East Website.</p> -->
+</div>
+<div class="web-search-results" [hidden]="web" style="padding-left: 2rem;">
+    <div class="result" *ngFor="let result of web_results" style="margin-top: 3rem;">
+        <!-- <b>{{result.title}}</b><br> -->
+        <a href="{{result.url}}"><b>{{result.title}}</b></a>
     </div><br><br>
 </div>
-<div class="img-search-results" [hidden]="img">
+<!-- <div class="img-search-results" [hidden]="img">
   <div class="result" *ngFor="let result of img_results">
       <div><img src="{{result.url}}" style="height: 500px; width:500;"></div>
   </div><br><br>
-</div>
-<!-- <div class="footer">
-    Made by Yojit Shinde
 </div> -->
