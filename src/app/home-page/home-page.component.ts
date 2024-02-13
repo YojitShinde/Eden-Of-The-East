@@ -6,14 +6,14 @@ import { WebSearchService } from '../web-search.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
   
-  web_results:any = []
-  img_results:any = []
+  web_results:any = [];
+  chat_result:String = "";
   web: boolean = true;
-  img: boolean = true;
+  chat: boolean = true;
 
   @HostBinding('class.pc') pcMode = false;
 
@@ -48,10 +48,10 @@ export class HomePageComponent implements OnInit {
 
   onWebSearchClick(){
     this.web = false;
-    this.img = true;
     console.log(this.query);
     this.webSearchService.basicSearch(this.query).subscribe(res=>{
       console.log(res)
+
       this.web_results[0] = res.results[0];
       this.web_results[1] = res.results[1];
       this.web_results[2] = res.results[2];
@@ -65,20 +65,14 @@ export class HomePageComponent implements OnInit {
     })
 	}
 
-  // onImgSearchClick(){
-  //   this.web = true;
-  //   this.img = false;
-  //   console.log(this.query);
-  //   this.webSearchService.imageSearch(this.query).subscribe(res=>{
-  //     console.log(res);
-  //     this.img_results[0] = res.value[0];
-  //     this.img_results[1] = res.value[1];
-  //     this.img_results[2] = res.value[2];
-  //     this.img_results[3] = res.value[3];
-  //     this.img_results[4] = res.value[4];
-  //   })
-  // }
-  
+  onChatClick(){
+    this.chat = false;
+    console.log(this.query);
+    this.webSearchService.chat(this.query).subscribe(res=>{
+      console.log(res)
+
+      this.chat_result = res.result;
+    })
+  }
+
 }
-
-

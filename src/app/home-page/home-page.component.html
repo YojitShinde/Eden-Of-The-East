@@ -1,33 +1,43 @@
 <p>
-  <mat-toolbar><marquee>'Eden-Of-The-East' is an Open-Source Project developed by Yojit Shinde | It is a Search Engine built with AngularJS and JoJ Web-Search API</marquee></mat-toolbar>
+  <mat-toolbar><marquee>'Eden-Of-The-East' is an Open-Source Project developed by Yojit Shinde | It is a Search Engine built with AngularJS, JoJ Web-Search & ChatGPT API</marquee></mat-toolbar>
 </p>
 <div class="container">
   <img src="assets/eden_of_the_east_icon.jpg">
 </div>
-<div class="search-field">
+
+<div class="web-search-results" [hidden]="web" style="padding-left: 2rem;">
+  <div class="result" *ngFor="let result of web_results" style="margin-top: 3rem;">
+      <!-- <b>{{result.title}}</b><br> -->
+      <a href="{{result.url}}"><b>{{result.title}}</b></a>
+      <p>{{result.description}}</p>
+  </div>
+</div>
+
+<div class="web-search-chat" [hidden]="chat" style="padding-left: 2rem;">
+  <div class="result" style="margin-top: 3rem;">
+      <p><b>{{chat_result}}</b></p>
+  </div><br><br>
+</div>
+
+<div class="search_field">
     <form>
+      <p style="font-size: 1.2rem;">Welcome to Eden-Of-The-East.</p><br>
+      <!-- <p style="font-size: 1.0rem;">APIs used: JoJ Web-Search, ChatGPT 4</p> -->
+      <p style="font-size: 1.0rem;">Enter a query and click on the 'Search/Chat' button.</p>
+      <!-- <p style="font-size: 1.0rem;">2) Conversational AI: Enter the query and click on the 'Chatbot' button.</p> -->
+      <p>For Contribution, <a href="https://github.com/YojitShinde/Eden-Of-The-East">Click Here!</a></p><br><br>
       <mat-form-field appearance="outline">
         <mat-label>Query</mat-label>
         <input matInput name="query" [(ngModel)] = "query">
       </mat-form-field><br>
-      <button type="submit" mat-stroked-button (click)="onWebSearchClick()">Search</button><br><br><br><br>
-      <!-- <button type="submit" mat-stroked-button (click)="onImgSearchClick()">Image Search</button> -->
-      <p style="font-size: 1.2rem;">Welcome to Eden-Of-The-East.</p>
-      <p style="font-size: 1.0rem;">To use this Web-App: Enter the query and click on the search button.</p>
-      <p>For Contribution, <a href="https://github.com/YojitShinde/Eden-Of-The-East">Click Here!</a></p>
+      <button type="submit" mat-stroked-button (click)="onWebSearchClick()">Search</button><br><br>
+      <button type="submit" mat-stroked-button (click)="onChatClick()">Chat</button><br><br><br><br>
     </form>
 </div>
-<div style="margin-left: 5rem;">
-  <!-- <p>Welcome to Eden-Of-The-East Website.</p> -->
-</div>
-<div class="web-search-results" [hidden]="web" style="padding-left: 2rem;">
-    <div class="result" *ngFor="let result of web_results" style="margin-top: 3rem;">
-        <!-- <b>{{result.title}}</b><br> -->
-        <a href="{{result.url}}"><b>{{result.title}}</b></a>
-    </div><br><br>
-</div>
-<!-- <div class="img-search-results" [hidden]="img">
-  <div class="result" *ngFor="let result of img_results">
-      <div><img src="{{result.url}}" style="height: 500px; width:500;"></div>
-  </div><br><br>
+<!-- <div style="margin-left: 5rem;">
 </div> -->
+
+
+
+
+

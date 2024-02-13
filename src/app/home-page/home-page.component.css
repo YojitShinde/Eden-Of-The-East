@@ -19,9 +19,9 @@ mat-toolbar {
 .example-full-width {
     width: 100%;
 }
-.search-field {
-    text-align: center;
-    margin-top: 5rem; 
+.search_field {
+    text-align: center; 
+    margin-top: 3rem;
 }
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
     color: #ff3131!important;
@@ -34,13 +34,23 @@ button {
     color: white;
     margin-right: 1.3rem;
 }
-.search-results {
+.web-search-results {
     margin-left: 3rem;
     margin-top: 5rem; 
-    padding-bottom: 3rem;
+    margin-right: 3rem;
+    padding-bottom: 2rem;
+    border: black solid;
+}
+.web-search-chat{
+    /* text-align: center; */
+    margin-left: 3rem;
+    margin-top: 5rem; 
+    margin-right: 3rem;
+    padding-bottom: 1rem;
+    border: black solid;
 }
 .result{
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
 }
 .footer {
     text-align: center;
